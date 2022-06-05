@@ -207,6 +207,7 @@ void tour_combat(Joueur joueurA, Joueur joueurB){
 }
 
 int main(){
+	// - Variables
 	int nmbperso=0;
 	char a;
 	int choix;
@@ -217,10 +218,14 @@ int main(){
 	Personnage* tabperso;
 	Joueur joueur1;
 	Joueur joueur2;
+
+	// - Display characters
 	tabperso=lirefichier(&nmbperso);
 	printf("perso :%d", nmbperso);
 	affichetabval(tabperso,nmbperso);
 	printf("\n");
+
+	// - Characters selection
 	printf("Premier joueur, Choisissez 3 personnages \n");
 	printf("Choisissez le 1er personnage en fonction du numéro attribué\n");
 	scanf("%d",&choix);
@@ -282,6 +287,8 @@ int main(){
 			printf("erreur, Choisissez entre 5 et 6 \n");
 			scanf("%d",&y);
 		}
+
+	// - Beginning of the game
 	if (y==5){
 		tour_combat_ordi(joueur1, joueur2);
 	}
